@@ -1,5 +1,5 @@
 
-public class Sherif extends Humain {
+public class Sherif extends CowBoy {
 
     public Sherif(String name) {
         super(name);
@@ -9,12 +9,12 @@ public class Sherif extends Humain {
        this.parler(String.format("OYEZ OYEZ BRAVE GENS !! 200 $ à qui arrêtera %s mort ou vif !!", brigand.quelEstTonNom())); 
     }
 
-    public void coffrer(Brigand brigand) {
-        
-    }
-
     public String quelEstTonNom() {
         return "Shérif" + super.quelEstTonNom();
     }
 
+    public void sePresenter() {
+        super.sePresenter();
+        parler(String.format("J'ai capturé %d brigand dans ma carrière.", getNbBrigandCoffre()));
+    }
 }

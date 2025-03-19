@@ -47,12 +47,12 @@ public class App {
 		luke.coffrer(bill);
 		luke.sePresenter();
 
-		// // Q1.7
-		// System.out.println();
-		// System.out.println("---------------Q1.7-----------------");
-		// CowBoy clint = new Sherif("Clint");
-		// clint.sePresenter();
-		// // clint.coffrer(bill);
+		// Q1.7
+		System.out.println();
+		System.out.println("---------------Q1.7-----------------");
+		CowBoy clint = new Sherif("Clint");
+		clint.sePresenter();
+		clint.coffrer(bill);
 
 	}
 
