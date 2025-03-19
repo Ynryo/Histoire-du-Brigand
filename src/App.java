@@ -38,14 +38,14 @@ public class App {
 		depardieu.servir(john);
 		depardieu.servir(margaret);
 
-		// // Q1.6
-		// System.out.println();
-		// System.out.println("---------------Q1.6-----------------");
-		// Sherif luke = new Sherif("Lucky Luke");
-		// luke.sePresenter();
-		// luke.rechercher(bill);
-		// luke.coffrer(bill);
-		// luke.sePresenter();
+		// Q1.6
+		System.out.println();
+		System.out.println("---------------Q1.6-----------------");
+		Sherif luke = new Sherif("Lucky Luke");
+		luke.sePresenter();
+		luke.rechercher(bill);
+		luke.coffrer(bill);
+		luke.sePresenter();
 
 		// // Q1.7
 		// System.out.println();

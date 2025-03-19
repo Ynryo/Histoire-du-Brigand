@@ -1,6 +1,6 @@
 public class CowBoy extends Humain {
 
-    public static final String BOISSON_COWBOY_DEFAUT = "Jack Daniel";
+    public static final String BOISSON_COWBOY_DEFAUT = "whisky";
     private String desc;
     private int popularite = 0;
     private String adjectif = "vaillant";
@@ -19,5 +19,9 @@ public class CowBoy extends Humain {
     public void liberer(Dame dame) {
         dame.setStatut("libre");
         popularite += 1;
+    }
+
+    public void sePresenter() {
+        this.parler(String.format("Je suis %s et j'ai une popularité de %d.", adjectif, popularite));
     }
 }

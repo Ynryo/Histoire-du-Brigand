@@ -1,7 +1,13 @@
 
 public class Dame extends Humain {
+    public static final String DAME_DEFAULT_DRINK = "lait";
     private String rCouleur;
     private String statut = "libre";
+
+    public Dame(String name, String rCouleur) {
+        super(name, DAME_DEFAULT_DRINK);
+        this.rCouleur = rCouleur;
+   }
 
     public Dame(String name, String favDrink, String rCouleur) {
         super(name, favDrink);
@@ -28,6 +34,10 @@ public class Dame extends Humain {
 
     public String quelEstTonNom() {
         return "Miss " + super.quelEstTonNom();
+    }
+
+    public void sePresenter() {
+        this.parler(String.format("Regardez ma robe %s, elle est magnifique.", rCouleur));
     }
 
 }

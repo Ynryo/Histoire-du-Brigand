@@ -13,14 +13,14 @@ public class Barman extends Humain {
     }
 
     public void parler(String text) {
-        System.out.println(text + " Coco.");
+        super.parler(text + " Coco.");
     }
 
     public void sePresenter() {
-        this.parler(String.format("Bonjour, je m'appelle %s et ma boisson préférée est %s. Bienvenue dan smon bar %s", name, super, barName));
+        parler(String.format("Bonjour, je m'appelle %s et ma boisson préférée est %s. Bienvenue dans mon bar %s", super.quelEstTonNom(), super.getFavDrink(), barName));
     }
 
     public void servir(Humain humain) {
-        
+        humain.parler(String.format("Ah ! un bon verre de %s ! GLOUPS !", humain.getFavDrink()));
     }
 }
