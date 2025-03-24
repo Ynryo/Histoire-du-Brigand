@@ -1,14 +1,16 @@
+package farwest;
 
+@SuppressWarnings("unused")
 public class Dame extends Humain {
     public static final String DAME_DEFAULT_DRINK = "lait";
     private String rCouleur;
-    @SuppressWarnings("unused")
     private String statut = "libre";
+    private HorsLaLoi ravisseur;
 
     public Dame(String name, String rCouleur) {
         super(name, DAME_DEFAULT_DRINK);
         this.rCouleur = rCouleur;
-   }
+    }
 
     public Dame(String name, String favDrink, String rCouleur) {
         super(name, favDrink);
@@ -21,24 +23,31 @@ public class Dame extends Humain {
         this.rCouleur = rCouleur;
     }
 
-    public void setStatut(String statut) {
-        this.statut = statut;
+    public void setLibre() {
+        statut = "libre";
+        parler(String.format("Lets gooo, je suis libérée des griffes de %s.", ravisseur));
     }
 
-    public void setStatut(String statut, Brigand brigand) {
-        this.statut = statut;
-        if (statut == "capturée") {
-            parler(String.format("Damned, je suis fait ! %s, tu m’as eu !", brigand));
-
-        }
+    public void setKidnap(HorsLaLoi horsLaLoi) {
+        statut = "capturée";
+        parler(String.format("Damned, je suis fait ! %s, tu m'as eu !", horsLaLoi));
+        this.ravisseur = horsLaLoi;
     }
 
+    @Override
     public String quelEstTonNom() {
         return "Miss " + super.quelEstTonNom();
     }
 
+    @Override
     public void sePresenter() {
+        super.sePresenter();
         parler(String.format("Regardez ma robe %s, elle est magnifique.", rCouleur));
+    }
+
+    @Override
+    public String toString() {
+        return quelEstTonNom();
     }
 
 }

@@ -1,3 +1,4 @@
+package farwest;
 public class CowBoy extends Humain {
 
     public static final String BOISSON_COWBOY_DEFAUT = "whisky";
@@ -5,7 +6,6 @@ public class CowBoy extends Humain {
     private String desc;
     private int popularite = 0;
     private String adjectif = "vaillant";
-    private int brigandsCoffre = 0;
 
     public CowBoy(String name) {
         super(name, BOISSON_COWBOY_DEFAUT);
@@ -16,29 +16,23 @@ public class CowBoy extends Humain {
         this.desc = desc;
     }
 
+    public String getAdjectif() {
+        return adjectif;
+    }
+
     public void tirer(Brigand brigand) {
         parler(String.format("Le %s %s tire sur %s. PAN !", adjectif, this.quelEstTonNom(), brigand.quelEstTonNom()));
         parler("Prend ça, rascal !");
-
     }
 
     public void liberer(Dame dame) {
-        dame.setStatut("libre");
+        dame.setLibre();
         popularite += 1;
     }
 
+    @Override
     public void sePresenter() {
         super.sePresenter();
         parler(String.format("Je suis %s et j'ai une popularité de %d.", adjectif, popularite));
-    }
-
-    public void coffrer(Brigand brigand) {
-        brigandsCoffre += 1;
-        brigand.coffrer();
-        parler("Au nom de la loi, je vous arrête !");
-    }
-
-    public int getNbBrigandCoffre() {
-        return brigandsCoffre;
     }
 }

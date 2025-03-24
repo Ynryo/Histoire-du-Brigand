@@ -1,3 +1,4 @@
+package farwest;
 public class App {
 
 	public static void main(String[] args) {
@@ -52,8 +53,10 @@ public class App {
 		System.out.println("---------------Q1.7-----------------");
 		CowBoy clint = new Sherif("Clint");
 		clint.sePresenter();
-		clint.coffrer(bill);
 
+		
+		System.out.println();
+		System.out.println("---------------Q2.1-----------------");
 	}
 
 }

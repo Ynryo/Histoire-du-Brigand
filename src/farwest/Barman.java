@@ -1,9 +1,10 @@
+package farwest;
 public class Barman extends Humain {
 
     private String barName;
 
     public Barman(String name) {
-        super(name, "Vin");
+        super(name, "vin");
         barName = "Chez " + name;
     }
     
@@ -16,11 +17,17 @@ public class Barman extends Humain {
         super.parler(text + " Coco.");
     }
 
+    public void servir(Humain humain) {
+        humain.parler(String.format("Ah ! un bon verre de %s ! GLOUPS !", humain.getFavDrink()));
+    }
+
+    @Override
     public void sePresenter() {
         parler(String.format("Bonjour, je m'appelle %s et ma boisson préférée est %s. Bienvenue dans mon bar %s", super.quelEstTonNom(), super.getFavDrink(), barName));
     }
 
-    public void servir(Humain humain) {
-        humain.parler(String.format("Ah ! un bon verre de %s ! GLOUPS !", humain.getFavDrink()));
+    @Override
+    public String toString() {
+        return quelEstTonNom();
     }
 }

@@ -1,3 +1,4 @@
+package farwest;
 public class Humain {
     private String name;
     private String favDrink;
@@ -17,7 +18,7 @@ public class Humain {
             this.parler(String.format("Bonjour, je m'appelle %s.", name));
 
         } else {
-            this.parler(String.format("Bonjour, je m'appelle %s et ma boisson préférée est %s.", name, favDrink));
+            this.parler(String.format("Bonjour, je m'appelle %s et ma boisson préférée est %s.", quelEstTonNom(), getFavDrink()));
         }
     }
 
