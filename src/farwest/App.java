@@ -56,7 +56,12 @@ public class App {
 
 		
 		System.out.println();
-		System.out.println("---------------Q2.1-----------------");
+		System.out.println("---------------Q2.3-----------------");
+		Ripoux thomas = new Ripoux("Thomas Musset");
+		thomas.kidnapper(margaret);
+		thomas.kidnapper(margaret);
+		clint.liberer(margaret);
+		clint.sePresenter();
 	}
 
 }

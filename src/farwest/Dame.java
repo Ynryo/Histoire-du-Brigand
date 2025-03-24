@@ -22,6 +22,14 @@ public class Dame extends Humain {
 
         this.rCouleur = rCouleur;
     }
+    
+    public String getStatut() {
+        return statut;
+    }
+    
+    public HorsLaLoi getRavisseur() {
+        return ravisseur;
+    }
 
     public void setLibre() {
         statut = "libre";

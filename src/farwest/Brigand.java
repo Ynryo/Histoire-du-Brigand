@@ -1,8 +1,9 @@
 package farwest;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Brigand extends Humain implements HorsLaLoi {
+public class Brigand extends Humain implements HorsLaLoi, VisagePale {
 
     public static final String BOISSON_BRIGAND_DEFAUT = "whisky";
     @SuppressWarnings("unused")
@@ -18,10 +19,17 @@ public class Brigand extends Humain implements HorsLaLoi {
 
     public void kidnapper(Dame dame) {
         if (!inPrison) {
-        this.parler(String.format("Ah ah ! %s, tu es mienne desormais !", dame));
-        dame.setKidnap(this);
-        dameCaptureeList.add(dame);
-
+            if (dame.getStatut().equals("libre")) {
+                this.parler(String.format("Ah ah ! %s, tu es mienne desormais !", dame));
+                dame.setKidnap(this);
+                dameCaptureeList.add(dame);
+            } else {
+                if (!dameCaptureeList.contains(dame)) {
+                    dame.getRavisseur().raler();
+                } else {
+                    System.err.println("Tu ne peux pas kidnapper une dame déjà kidnappée par toi même endouille.");
+                }
+            }
         }
     }
 
@@ -33,7 +41,7 @@ public class Brigand extends Humain implements HorsLaLoi {
     @Override
     public void sePresenter() {
         super.sePresenter();
-        parler(String.format("J'ai l'air %s et j'ai déjà kidnappé %d dames !",look, dameCaptureeList.size()));
+        parler(String.format("J'ai l'air %s et j'ai déjà kidnappé %d dames !", look, dameCaptureeList.size()));
         parler(String.format("Ma tête est mise à prix %d $ !", dameCaptureeList.size() * 100));
     }
 
@@ -43,6 +51,10 @@ public class Brigand extends Humain implements HorsLaLoi {
             dame.setLibre();
         }
         dameCaptureeList.clear();
+    }
+
+    public void raler() {
+        parler("Enlève tes pates de ma prissonière, sale truant.");
     }
 
     @Override
