@@ -26,7 +26,7 @@ public class CowBoy extends Humain {
     }
 
     public void liberer(Dame dame) {
-        dame.setLibre();
+        dame.setLibre(this);
         popularite += 1;
     }
 

@@ -31,9 +31,10 @@ public class Dame extends Humain {
         return ravisseur;
     }
 
-    public void setLibre() {
+    public void setLibre(CowBoy cowboy) {
         statut = "libre";
         parler(String.format("Lets gooo, je suis libérée des griffes de %s.", ravisseur));
+        parler(String.format("Merci beaucoup %s.", cowboy));
     }
 
     public void setKidnap(HorsLaLoi horsLaLoi) {

@@ -45,10 +45,10 @@ public class Brigand extends Humain implements HorsLaLoi, VisagePale {
         parler(String.format("Ma tête est mise à prix %d $ !", dameCaptureeList.size() * 100));
     }
 
-    public void goInJailCheh() {
+    public void goInJailCheh(CowBoy cowBoy) {
         inPrison = true;
         for (Dame dame : dameCaptureeList) {
-            dame.setLibre();
+            dame.setLibre(cowBoy);
         }
         dameCaptureeList.clear();
     }

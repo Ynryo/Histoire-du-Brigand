@@ -28,10 +28,10 @@ public class FemmeBrigand extends Dame implements HorsLaLoi {
         }
     }
 
-    public void goInJailCheh() {
+    public void goInJailCheh(CowBoy cowboy) {
         inPrison = true;
         for (Dame dame : dameCaptureeList) {
-            dame.setLibre();
+            dame.setLibre(cowboy);
         }
         dameCaptureeList.clear();
     }

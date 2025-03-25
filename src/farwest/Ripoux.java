@@ -27,15 +27,25 @@ public class Ripoux extends Sherif implements HorsLaLoi {
         }
     }
 
-    public void goInJailCheh() {
+    public void goInJailCheh(CowBoy cowboy) {
         inPrison = true;
         for (Dame dame : dameCaptureeList) {
-            dame.setLibre();
+            dame.setLibre(cowboy);
         }
         dameCaptureeList.clear();
     }
 
     public void raler() {
         parler("Enlève tes pates de ma prissonière, sale truant.");
+    }
+    
+    @Override
+    public String quelEstTonNom() {
+        return "Faux " + super.quelEstTonNom();
+    }
+    
+    @Override
+    public String toString() {
+        return quelEstTonNom();
     }
 }

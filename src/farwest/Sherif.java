@@ -36,7 +36,7 @@ public class Sherif extends CowBoy {
 
     public void coffrer(HorsLaLoi horsLaLoi) {
         horsLaLoiCoffre++;
-        horsLaLoi.goInJailCheh();
+        horsLaLoi.goInJailCheh(this);
         parler("Au nom de la loi, je vous arrête !");
     }
 }
